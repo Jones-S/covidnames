@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Deck />
-    {{ words }}
+    <Deck :words="words" />
     <Input />
   </div>
 </template>
@@ -20,8 +19,7 @@ export default {
   computed: {
     ...mapGetters('ui', ['get25Words']),
     words() {
-      console.log('get25Words: ', this.get25Words)
-      return 'hello'
+      return this.get25Words
     }
   }
 }

@@ -8,7 +8,11 @@
 export default {
   name: 'Deck',
   props: {
-    msg: String
+    words: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
   }
 }
 </script>
