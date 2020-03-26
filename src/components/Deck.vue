@@ -1,6 +1,6 @@
 <template>
   <div class="Deck">
-    <Card v-for="(word, index) in words" :key="index" :word="word" />
+    <Card v-for="(card, index) in cards" :key="index" :card="card" />
   </div>
 </template>
 
@@ -9,11 +9,11 @@ import Card from './Card.vue'
 
 export default {
   name: 'Deck',
-    components: {
+  components: {
     Card
   },
   props: {
-    words: {
+    cards: {
       type: Array,
       required: true,
       default: () => []

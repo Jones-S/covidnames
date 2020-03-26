@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Deck :words="words" />
+    <Deck v-if="cards" :cards="cards" />
     <Input />
   </div>
 </template>
@@ -17,15 +17,15 @@ export default {
     Deck
   },
   computed: {
-    ...mapGetters('ui', ['getWords']),
-    words() {
-      return this.getWords
-    }
+    ...mapGetters('ui', ['cards'])
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/css/global';
+@import '@/assets/css/_elements.page';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

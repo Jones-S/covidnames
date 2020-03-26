@@ -2,12 +2,15 @@ import words from '../../data/words'
 import seedrandom from 'seedrandom' // eslint-disable-line no-unused-vars
 
 const TEAM_BLUE = 0;
-const TEAM_RED = 0;
+const TEAM_RED = 1;
+const NEUTRAL_CARD = 2;
+const DEATH_CARD = 3;
 
 const state = {
   current25Words: [],
   seed: 'random',
-  starterTeam: false
+  starterTeam: false,
+  gamePattern: []
 }
 
 const shuffle = (array) => {
@@ -36,7 +39,6 @@ const actions = {
     dispatch('setRandomizedData')
   },
   setRandomizedData({ commit, state }) {
-    console.log('state.seed: ', state.seed)
     // do all random stuff here to have some control in which steps they occur
     // first create a new seedrandom
     // which makes Math.random() predictable from here on
@@ -46,12 +48,29 @@ const actions = {
     // then shuffle the words
     const shuffled = shuffle(words)
     const shuffled25 = shuffled.slice(0, 25)
-    console.log('shuffled25: ', shuffled25)
     commit('SAVE_SHUFFLED_WORDS', shuffled25)
     
     const starterTeam = Math.random() > 0.5 ? TEAM_BLUE : TEAM_RED
-    console.log('starterTeam: ', starterTeam)
     commit('SAVE_STARTER_TEAM', starterTeam)
+
+    // initiate with 25 neutral cards
+    let gamePattern = []
+    for (let cardIndex = 0; cardIndex < 25; cardIndex++) {
+      if (cardIndex === 0) {
+        gamePattern.push(DEATH_CARD)
+      }
+      // then depending on who starts set 8 and 9 of blue and red
+      else if (cardIndex <= 9) {
+        gamePattern.push(starterTeam)
+      } else if (cardIndex <= 17) {
+        gamePattern.push(starterTeam === TEAM_BLUE ? TEAM_RED : TEAM_BLUE)
+      } else {
+        gamePattern.push(NEUTRAL_CARD)
+      }
+    }
+    // then shuffle
+    const randomGamePattern = shuffle(gamePattern)
+    commit('SAVE_GAME_PATTERN', randomGamePattern)
   }
 }
 
@@ -65,11 +84,25 @@ const mutations = {
   },
   SAVE_STARTER_TEAM(state, team) {
     state.starterTeam = team
+  },
+  SAVE_GAME_PATTERN(state, pattern) {
+    state.gamePattern = pattern
   }
 }
 
 const getters = {
-  getWords: (state) => state.current25Words
+  cards: (state) => {
+    if (state.current25Words.length && state.gamePattern.length && state.current25Words.length === state.gamePattern.length) {
+      return state.current25Words.map((word, index) => {
+        return {
+          text: word,
+          type: state.gamePattern[index]
+        }
+      })
+    } else {
+      return false
+    }
+  }
 }
 
 

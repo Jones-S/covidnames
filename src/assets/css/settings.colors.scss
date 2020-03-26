@@ -1,14 +1,14 @@
 // Settings – Colors
 
-$s-color-primary: #00f;
-$s-color-secondary: #54e8a5;
 $s-color-black: #000;
 $s-color-white: #fff;
-$s-color-grey: #444;
-$s-color-lightgrey: #efefef;
-$s-color-error: #f00;
-$s-color-success: #0f0;
-$s-color-alert: $s-color-primary;
+$s-color-blue: #000BFF;
+$s-color-red: #FF3D3D;
+$s-color-neutral: #FFD679;
+$s-color-death: $s-color-black;
+$s-color-on: #ABF39D;
 
 $s-color-body-background: $s-color-white;
 $s-color-text-default: $s-color-black;
+
+$s-color-primary: $s-color-blue;

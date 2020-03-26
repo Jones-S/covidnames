@@ -1,0 +1,52 @@
+/*
+ * Strong,B Styles
+ */
+
+@mixin font-style-strong {
+  // You might want to replace this with an actual font file
+  font-weight: bold;
+}
+
+/*
+ * Italic
+ */
+
+@mixin font-style-italic {
+  // You might want to replace this with an actual font file
+  font-style: italic;
+}
+
+/*
+ * Link & Button Styles
+ */
+
+@mixin font-style-link {
+  @include font-style-base;
+  text-decoration: underline;
+}
+
+@mixin font-style-button {
+  @include font-style-base;
+}
+
+/*
+ * Font Styles
+ */
+
+@mixin font-style-base {
+  font-family: $s-font-family-base;
+  font-size: px-to-rem($s-fz-medium);
+  font-weight: normal;
+  line-height: $s-line-height-std;
+  letter-spacing: normal;
+
+  @include mq($from: medium) {
+    font-size: px-to-rem($s-fz-increased);
+  }
+}
+
+@mixin font-style-heading-base {
+  @include font-style-base;
+  @include font-style-strong;
+  margin-bottom: 0.5em;
+}
