@@ -27,7 +27,7 @@ export default {
     ...mapActions('ui', ['changeSeed']),
     regenerate() {
       this.activeSeed = this.input
-      this.changeSeed('yolo')
+      this.changeSeed(this.activeSeed)
       this.setRoute(this.activeSeed)
     },
     checkRoute() {
@@ -40,13 +40,16 @@ export default {
         query = query[0]
       }
       if (query) {
-        this.name = query
+        this.input = query
         this.activeSeed = query
-        this.changeSeed('yolo')
+        this.changeSeed(query)
       }
     },
-    setRoute(name) {
-      this.$router.replace({ query: { seed: name } })
+    setRoute(seed) {
+      // we need to check if the query already exists:  https://github.com/quasarframework/quasar/issues/5672
+      if (!this.$route.query || !this.$route.query.seed || this.$route.query.seed !== seed) {
+        this.$router.replace({ query: { seed: seed } })
+      }
     }
   }
 }

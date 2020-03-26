@@ -8,6 +8,7 @@ const state = {
 }
 
 const shuffle = (array, randomSeed) => {
+  const tempArray = array.slice(0); // make a quick copy of the array
   let counter = array.length;
 
   // While there are elements in the array
@@ -17,12 +18,12 @@ const shuffle = (array, randomSeed) => {
     counter--;
 
     // And swap the last element with it
-    let temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
+    let temp = tempArray[counter];
+    tempArray[counter] = tempArray[index];
+    tempArray[index] = temp;
   }
 
-  return array;
+  return tempArray;
 }
 
 // actions
