@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Deck />
+    {{ words }}
+    <Input />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapGetters } from 'vuex'
+import Input from './components/Input.vue'
+import Deck from './components/Deck.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Input,
+    Deck
+  },
+  computed: {
+    ...mapGetters('ui', ['get25Words']),
+    words() {
+      console.log('get25Words: ', this.get25Words)
+      return 'hello'
+    }
   }
 }
 </script>
