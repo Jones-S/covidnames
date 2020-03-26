@@ -27,8 +27,8 @@ export default {
     ...mapActions('ui', ['changeSeed']),
     regenerate() {
       this.activeSeed = this.input
-      this.changeSeed(this.activeSeed)
-      this.setRoute(this.activeSeed)
+      this.changeSeed(this.input)
+      this.setRoute(this.input)
     },
     checkRoute() {
       let query =
@@ -43,6 +43,9 @@ export default {
         this.input = query
         this.activeSeed = query
         this.changeSeed(query)
+      } else {
+        // set a seed anyway
+        this.changeSeed(this.activeSeed)
       }
     },
     setRoute(seed) {

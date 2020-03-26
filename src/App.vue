@@ -17,9 +17,9 @@ export default {
     Deck
   },
   computed: {
-    ...mapGetters('ui', ['get25Words']),
+    ...mapGetters('ui', ['getWords']),
     words() {
-      return this.get25Words
+      return this.getWords
     }
   }
 }

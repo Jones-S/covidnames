@@ -25,10 +25,10 @@ export default {
 
   .Card {
     background-color: black;
-    padding: 10px;
+    padding: px-to-rem(10px);
 
     span {
-      color: $s-color-primary;
+      color: $s-color-white;
     }
   }
 
