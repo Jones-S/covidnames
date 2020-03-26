@@ -1,7 +1,6 @@
 <template>
-  <div>
-    This is the deck
-    <Card :word="'jones'" />
+  <div class="Deck">
+    <Card v-for="(word, index) in words" :key="index" :word="word" />
   </div>
 </template>
 
@@ -25,4 +24,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  .Deck {
+    width: 100%;
+    heigth: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20% [col-start]);
+    grid-template-rows: repeat(5, 20% [col-start]);
+  }
 </style>
