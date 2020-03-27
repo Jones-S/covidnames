@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Icon/Eye</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Eye" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#000000" cx="11" cy="11" r="11"></circle>
+        <path d="M11,6.75 C7.24592765,6.75 4.08510663,9.8053108 2.99272853,10.9999105 C4.08462703,12.1942256 7.24564284,15.25 11,15.25 C12.5350752,15.25 13.9693775,14.7230215 15.200183,14.0345817 C16.0554577,13.5561916 16.8144752,12.9973254 17.4441446,12.4677921 C17.8743148,12.1060318 18.2443655,11.7576148 18.5436356,11.4567179 C18.6751017,11.3245372 18.7926897,11.2013313 18.9872197,10.9805626 C17.8727553,9.76802234 14.7301055,6.75 11,6.75 Z" id="Oval-Copy" stroke="#FFFFFF" stroke-width="1.5"></path>
+        <circle id="Oval" stroke="#FFFFFF" stroke-width="1.5" cx="11" cy="11" r="4.25"></circle>
+    </g>
+</svg>

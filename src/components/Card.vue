@@ -2,8 +2,8 @@
   <div v-if="card" :class="['Card', typeModifier(card.type)]">
     <div :class="['card-cover', { 'is-revealed' : revealed, 'is-checking': isChecking }]"></div>
     <span>{{ card.text }}</span>
-    <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" />
-    <IconButton v-else class="IconButton" @click.native="check" :text="isChecking ? 'Zudecken' : 'Prüfen'" />
+    <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="'check'" />
+    <IconButton v-else class="IconButton" @click.native="check" :text="isChecking ? 'Zudecken' : 'Prüfen'" :icon="'eye'" />
   </div>
 </template>
 
@@ -64,10 +64,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import '@/assets/css/global';
-
+  $c: 'Card';
   $c-card-size: 18.5rem;
 
-  .Card {
+  .#{$c} {
     background-color: $s-color-white;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 0 0 3rem rgba($s-color-black, 0.3);
@@ -109,10 +109,12 @@ export default {
   .card-cover {
     background-color: $s-color-neutral;
     position: absolute;
-    top: -100%;
+    top: calc(-100% - 2.5rem); // 100% + hiding shadow
     left: 0;
     width: 100%;
     height: 100%;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0 0 2rem rgba($s-color-black, 0.35);
     transition: top $s-animation-duration-default;
 
     &.is-revealed {

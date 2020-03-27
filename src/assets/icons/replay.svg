@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Icon/Replay</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Replay" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#000000" cx="11" cy="11" r="11"></circle>
+        <g id="Group" transform="translate(11.000000, 11.500000) scale(-1, 1) translate(-11.000000, -11.500000) translate(4.000000, 4.000000)">
+            <path d="M7,14 C10.8659932,14 14,10.8659932 14,7 C14,3.13400675 10.8659932,0 7,0 C3.13400675,0 0,3.13400675 0,7 C0,8.93260642 0.783185397,10.6822901 2.04948545,11.9489803" id="Oval" stroke="#FFFFFF" stroke-width="1.5"></path>
+            <polygon id="Triangle" fill="#FFFFFF" transform="translate(2.510107, 12.359209) rotate(134.000000) translate(-2.510107, -12.359209) " points="2.51010654 10.8592088 4.51010654 13.8592088 0.510106539 13.8592088"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Icon/Close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#000000" cx="11" cy="11" r="11"></circle>
+        <line x1="5.94974747" y1="6" x2="15.9497475" y2="16" id="Line" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square" transform="translate(10.949747, 11.000000) rotate(-90.000000) translate(-10.949747, -11.000000) "></line>
+        <line x1="5.94974747" y1="6" x2="15.9497475" y2="16" id="Line" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square"></line>
+    </g>
+</svg>
