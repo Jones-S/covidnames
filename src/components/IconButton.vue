@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
   @import '@/assets/css/global';
   $c: 'IconButton';
-  $c-iconbutton-size: 2.2rem;
+  $c-iconbutton-size: 3rem;
   
   .#{$c} {
     @include reset-button;
@@ -66,12 +66,12 @@ export default {
       top: 0;
       right: -100%;
       min-height: $c-iconbutton-size;
-      padding-right: $c-iconbutton-size + 0.6rem;
+      padding-right: $c-iconbutton-size + $c-iconbutton-size / 3;
       // for centering text vertically
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 1em;
+      padding-left: 1.2em;
       transition: right $s-animation-duration-default;
       
     }

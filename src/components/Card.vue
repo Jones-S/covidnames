@@ -22,7 +22,8 @@ export default {
   data() {
     return {
       revealed: false,
-      isChecking: false
+      isChecking: false,
+      sadTromboneSound: false
     }
   },
   props: {
@@ -31,6 +32,9 @@ export default {
       required: true,
       default: () => false
     }
+  },
+  mounted() {
+    this.sadTromboneSound = new Audio(require('@/assets/sad_trombone.mp3'))
   },
   methods: {
     typeModifier(type) {
@@ -53,6 +57,9 @@ export default {
     },
     reveal() {
       this.revealed = true
+      if (this.card.type === DEATH_CARD) {
+        this.sadTromboneSound.play()
+      }
     },
     check() {
       this.isChecking = !this.isChecking
@@ -68,6 +75,7 @@ export default {
   $c-card-size: 18.5rem;
 
   .#{$c} {
+    @include font-style-cards;
     background-color: $s-color-white;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 0 0 3rem rgba($s-color-black, 0.3);
@@ -77,8 +85,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
-    
+    overflow: hidden;    
     padding: 1rem;
     height: 18.5rem;
     width: 18.5rem;

@@ -50,3 +50,10 @@
   @include font-style-strong;
   margin-bottom: 0.5em;
 }
+
+@mixin font-style-cards {
+  font-family: $s-font-family-cards;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}

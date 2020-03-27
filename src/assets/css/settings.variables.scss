@@ -7,7 +7,11 @@
  * Settings – Variables
  */
 
-$s-font-family-base: 'Arial', sans-serif;
+ @import url("https://use.typekit.net/rgy5gqh.css");
+ 
+$s-font-family-base: poynter-gothic-text, sans-serif;
+$s-font-family-cards: demos-next-condensed, sans-serif;
+
 
 /*
  * Font Sizes
