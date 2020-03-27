@@ -91,7 +91,7 @@ export default {
     span {
       color: $s-color-black;
       display: block;
-      font-size: $s-fz-big;
+      font-size: $s-fz-25;
     }
 
     &--red {

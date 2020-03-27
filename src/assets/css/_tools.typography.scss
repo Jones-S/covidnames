@@ -35,20 +35,15 @@
 
 @mixin font-style-base {
   font-family: $s-font-family-base;
-  font-size: px-to-rem($s-fz-medium);
+  font-size: $s-fz-18;
   font-weight: normal;
-  line-height: $s-line-height-std;
+  line-height: 1.2;
   letter-spacing: normal;
-
-  @include mq($from: medium) {
-    font-size: px-to-rem($s-fz-increased);
-  }
 }
 
 @mixin font-style-heading-base {
   @include font-style-base;
-  @include font-style-strong;
-  margin-bottom: 0.5em;
+  font-size: $s-fz-30;
 }
 
 @mixin font-style-cards {

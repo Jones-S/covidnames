@@ -13,15 +13,17 @@ $s-font-family-base: poynter-gothic-text, sans-serif;
 $s-font-family-cards: demos-next-condensed, sans-serif;
 
 
-/*
+/*$s-fz-25
  * Font Sizes
  * Before starting a project:
  * Set up a type-specification file
  */
 
 /* Font-Sizes */
-$s-fz-small: 14px;
-$s-fz-big: 2.5rem;
+$s-fz-14: 14px;
+$s-fz-18: 14px;
+$s-fz-25: 2.5rem;
+$s-fz-30: 3rem;
 
 
 /*
@@ -53,7 +55,7 @@ $s-size-gutter-large: $s-size-gutter-small * 4;
  */
 
 $s-the-header-bar-height-small: 70px;
-$s-the-header-bar-height: 110px;
+$s-the-header-bar-height: 5.4rem;
 
 $s-card-size: 18.5rem;
 $s-card-spacer: $s-size-spacer-small;
