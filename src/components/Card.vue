@@ -72,7 +72,6 @@ export default {
 <style lang="scss" scoped>
   @import '@/assets/css/global';
   $c: 'Card';
-  $c-card-size: 18.5rem;
 
   .#{$c} {
     @include font-style-cards;
@@ -80,15 +79,14 @@ export default {
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 0 0 3rem rgba($s-color-black, 0.3);
     border-radius: 0.8rem; 
-    margin: $s-size-spacer-small;
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: relative;
     overflow: hidden;    
     padding: 1rem;
-    height: 18.5rem;
-    width: 18.5rem;
+    height: $s-card-size;
+    width: $s-card-size;
 
     span {
       color: $s-color-black;
