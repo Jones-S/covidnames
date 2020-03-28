@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
   @import '@/assets/css/global';
   $c: 'IconButton';
-  $c-iconbutton-size: 3rem;
+  $c-iconbutton-size: $s-icon-size;
   
   .#{$c} {
     @include reset-button;

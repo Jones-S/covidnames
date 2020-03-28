@@ -1,6 +1,7 @@
 <template>
   <div id="app" :class="['App', { 'is-dark' : spymasterView }]">
     <Header />
+    <SpyMasterHeader/>
     <Deck v-if="cards" :cards="cards" />
     <Input />
   </div>
@@ -11,12 +12,14 @@ import { mapGetters, mapState } from 'vuex'
 import Input from './components/Input.vue'
 import Deck from './components/Deck.vue'
 import Header from './components/Header.vue'
+import SpyMasterHeader from './components/SpyMasterHeader.vue'
 
 export default {
   name: 'app',
   components: {
     Input,
     Deck,
+    SpyMasterHeader,
     Header
   },
   computed: {
@@ -34,6 +37,7 @@ export default {
 $c: 'App';
 
 .#{$c} {
+
   height: 100%;
   min-height: 100%;
   transition: background-color $s-animation-duration-default;

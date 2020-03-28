@@ -11,6 +11,10 @@ const state = {
   seed: 'random',
   starterTeam: false,
   gamePattern: [],
+  score: {
+    red: 0,
+    blue: 0
+  },
   spymasterView: false
 }
 
@@ -37,6 +41,11 @@ const shuffle = (array) => {
 const actions = {
   toggleSpyMaster({ commit }) {
     commit('TOGGLE_SPYMASTER')
+  },
+  updateScore({ commit }, payload) {
+    if (payload === TEAM_BLUE || payload === TEAM_RED ) {
+      commit('INCREASE_COUNT', payload)
+    }
   },
   changeSeed({ commit, dispatch }, payload) {
     commit('SAVE_SEED', payload)
@@ -85,6 +94,13 @@ const mutations = {
   },
   SAVE_SEED(state, seed) {
     state.seed = seed
+  },
+  INCREASE_COUNT(state, team) {
+    if (team === TEAM_RED) {
+      state.score.red++;
+    } else if (team === TEAM_BLUE) {
+      state.score.blue++;
+    }
   },
   SAVE_SHUFFLED_WORDS(state, words) {
     state.current25Words = words

@@ -45,10 +45,6 @@ $s-size-gutter-small: $s-size-spacer-small;
 $s-size-gutter-medium: $s-size-gutter-small * 2;
 $s-size-gutter-large: $s-size-gutter-small * 4;
 
-// $s-size-content-max-width-small: $s-fz-medium * 30; // 600px = 20px * 30em (don't make paragraphs too wide!)
-// $s-size-content-max-width-medium: 1100px;
-// $s-size-content-max-width-large: 1440px;
-
 
 /*
  * Settings – Specific sizes
@@ -59,6 +55,7 @@ $s-the-header-bar-height: 5.4rem;
 
 $s-card-size: 18.5rem;
 $s-card-spacer: $s-size-spacer-small;
+$s-icon-size: 3rem;
 
 /*
  * Settings – Animations
@@ -83,6 +80,11 @@ $s-size-breakpoint-increased: 1024px;
 $s-size-breakpoint-large: 1440px;
 $s-size-breakpoint-huge: 1920px;
 $s-size-breakpoint-giant: 2200px;
+
+// $s-size-content-max-width-small: $s-fz-medium * 30; // 600px = 20px * 30em (don't make paragraphs too wide!)
+// $s-size-content-max-width-medium: 1100px;
+// $s-size-content-max-width-large: 1440px;
+$s-size-content-max-width-large: 5 * ($s-card-size + $s-card-spacer * 1.5) + 4 * ($s-card-spacer) - 1.5rem;
 
 /*
  * Settings – z-Index

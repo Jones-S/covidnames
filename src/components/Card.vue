@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import IconButton from './IconButton.vue'
 
 const TEAM_BLUE = 0;
@@ -41,6 +41,7 @@ export default {
     this.sadTromboneSound = new Audio(require('@/assets/sad_trombone.mp3'))
   },
   methods: {
+    ...mapActions('ui', ['updateScore']),
     typeModifier(type) {
       let modifier
       switch (type) {
@@ -64,6 +65,7 @@ export default {
       if (this.card.type === DEATH_CARD) {
         this.sadTromboneSound.play()
       }
+      this.updateScore(this.card.type) // send index to update score
     },
     check() {
       this.isChecking = !this.isChecking
