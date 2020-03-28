@@ -34,7 +34,7 @@ export default {
   
   .#{$c} {
     padding: $s-size-spacer-small $s-size-gutter-small;
-    max-width: $s-size-content-max-width-large;
+    max-width: $s-size-content-max-width-large + 2 *$s-size-gutter-small;
     width: 100%;
     margin: 0 auto;
     display: flex;

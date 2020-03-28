@@ -29,8 +29,8 @@ export default {
   .Deck {
     display: grid;
     justify-content: center;	
-    grid-template-columns: repeat(5, ($s-card-size + ($s-card-spacer * 1.5)) [col-start]);
-    grid-template-rows: repeat(5, ($s-card-size + ($s-card-spacer * 1.5)) [col-start]);
+    grid-template-columns: repeat(5, ($s-card-size + ($s-card-spacer)) [col-start]);
+    grid-template-rows: repeat(5, ($s-card-size + ($s-card-spacer)) [col-start]);
     grid-gap: $s-card-spacer $s-card-spacer;
   }
 </style>

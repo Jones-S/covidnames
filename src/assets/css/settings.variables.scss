@@ -84,7 +84,7 @@ $s-size-breakpoint-giant: 2200px;
 // $s-size-content-max-width-small: $s-fz-medium * 30; // 600px = 20px * 30em (don't make paragraphs too wide!)
 // $s-size-content-max-width-medium: 1100px;
 // $s-size-content-max-width-large: 1440px;
-$s-size-content-max-width-large: 5 * ($s-card-size + $s-card-spacer * 1.5) + 4 * ($s-card-spacer) - 1.5rem;
+$s-size-content-max-width-large: 5 * $s-card-size + 5 * $s-size-spacer-small + 4 * $s-card-spacer;
 
 /*
  * Settings – z-Index
