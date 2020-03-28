@@ -2,17 +2,20 @@
   <div>
     <form @submit.prevent="regenerate()">
       <input v-model="input" placeholder="Seed">
-      <button @click="regenerate()">{{ buttonText }}</button>
+      <Button @click="regenerate()">{{ buttonText }}</Button>
     </form>
-    <p>Your Logo Seed is: {{ activeSeed }}</p>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import Button from './Button.vue'
 
 export default {
   name: 'Input',
+  components: {
+    Button
+  },
   data() {
     return {
       input: 'Random',
@@ -60,4 +63,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  @import '@/assets/css/global';
+
+  input {
+    @include font-style-base;
+    width: 100%;
+    padding: 0.6em 1em;
+    border: 0;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0 0 2rem rgba($s-color-black, 0.35);
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
 </style>

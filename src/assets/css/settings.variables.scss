@@ -91,6 +91,6 @@ $s-size-content-max-width-large: 5 * ($s-card-size + $s-card-spacer * 1.5) + 4 *
  */
 
 $s-zindex-map: (
+  'iconbuttons': 120,
   'sidecontainer': 110,
-  'menu': 90
 );

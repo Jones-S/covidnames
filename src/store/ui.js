@@ -15,7 +15,9 @@ const state = {
     red: 0,
     blue: 0
   },
-  spymasterView: false
+  spymasterView: false,
+  gameDialogOpen: false,
+  infoOpen: false,
 }
 
 const shuffle = (array) => {
@@ -41,6 +43,12 @@ const shuffle = (array) => {
 const actions = {
   toggleSpyMaster({ commit }) {
     commit('TOGGLE_SPYMASTER')
+  },
+  toggleInfo({ commit }) {
+    commit('TOGGLE_INFO')
+  },
+  toggleGameDialog({ commit }) {
+    commit('TOGGLE_GAME_DIALOG')
   },
   updateScore({ commit }, payload) {
     if (payload === TEAM_BLUE || payload === TEAM_RED ) {
@@ -91,6 +99,12 @@ const actions = {
 const mutations = {
   TOGGLE_SPYMASTER(state) {
     state.spymasterView = !state.spymasterView
+  },
+  TOGGLE_INFO(state) {
+    state.infoOpen = !state.infoOpen
+  },
+  TOGGLE_GAME_DIALOG(state) {
+    state.gameDialogOpen = !state.gameDialogOpen
   },
   SAVE_SEED(state, seed) {
     state.seed = seed

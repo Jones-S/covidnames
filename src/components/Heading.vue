@@ -42,6 +42,8 @@ export default {
   $c: 'Heading';
   
   .#{$c} {
+    margin-bottom: 0.4em;
+
     &--h1 {
       @include font-style-heading-base;
     }

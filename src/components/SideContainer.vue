@@ -1,22 +1,21 @@
 <template>
-  <div class="SideContainer">
+  <div :class="['SideContainer', { 'is-open' : isOpen }]">
     <div class="SideContainer__inner">
-      <Input />
-      <Heading :level="1">CovidNames – das CodeNames in Quarantäne-Zeiten</Heading>
+       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import Heading from './Heading.vue'
-import Input from './Input.vue'
-
 export default {
   name: 'SideContainer',
-  components: {
-    Input,
-    Heading
-  },
+  props: {
+    isOpen: {
+      type: Boolean,
+      required: true,
+      default: false
+    }
+  }
 }
 </script>
 
@@ -29,13 +28,18 @@ export default {
     z-index: z('sidecontainer');
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 100%;
     height: 100%;
     max-width: 100%;
     overflow-y: scroll;
-    padding: $s-size-gutter-small;
+    padding: $s-size-spacer-medium;
     background: $s-color-white;
+    transition: right $s-animation-duration-default;
+
+    &.is-open {
+      right: 0;
+    }
 
     @include mq($from: medium) {
       width: 50%;

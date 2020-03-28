@@ -33,6 +33,7 @@ export default {
     @include reset-button;
     background-color: transparent;
     min-height: $c-iconbutton-size;
+    min-width: $c-iconbutton-size;
     position: relative;
     overflow: hidden;
     border-radius: 50rem; // to make pill shape: https://stackoverflow.com/a/18795153/1121268
@@ -60,6 +61,15 @@ export default {
       &--check-white {
         background-image: url('~@/assets/icons/check-white.svg');
       }
+      &--replay {
+        background-image: url('~@/assets/icons/replay.svg');
+      }
+      &--question-mark {
+        background-image: url('~@/assets/icons/question-mark.svg');
+      }
+      &--close {
+        background-image: url('~@/assets/icons/close.svg');
+      }
     }
 
     &__text {
@@ -80,6 +90,9 @@ export default {
     }
 
     &:hover {
+      width: 100%;
+      min-width: 30rem;
+
       .#{$c}__icon {
         transform: rotate(10deg);
       }
