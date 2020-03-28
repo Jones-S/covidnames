@@ -1,13 +1,14 @@
 <template>
-  <div v-if="card" :class="['Card', typeModifier(card.type)]">
+  <div v-if="card" :class="['Card', typeModifier(card.type), { 'is-spymaster' : spymasterView }]">
     <div :class="['card-cover', { 'is-revealed' : revealed, 'is-checking': isChecking }]"></div>
     <span>{{ card.text }}</span>
-    <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="'check'" />
+    <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="spymasterView && card.type === 3 ? 'check-white' : 'check'" />
     <IconButton v-else class="IconButton" @click.native="check" :text="isChecking ? 'Zudecken' : 'Prüfen'" :icon="'eye'" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import IconButton from './IconButton.vue'
 
 const TEAM_BLUE = 0;
@@ -32,6 +33,9 @@ export default {
       required: true,
       default: () => false
     }
+  },
+  computed: {
+    ...mapState('ui', ['spymasterView'])
   },
   mounted() {
     this.sadTromboneSound = new Audio(require('@/assets/sad_trombone.mp3'))
@@ -87,11 +91,13 @@ export default {
     padding: 1rem;
     height: $s-card-size;
     width: $s-card-size;
+    transition: background-color $s-animation-duration-default, box-shadow $s-animation-duration-default;
 
     span {
       color: $s-color-black;
       display: block;
       font-size: $s-fz-25;
+      transition: color $s-animation-duration-default;
     }
 
     &--red {
@@ -107,6 +113,37 @@ export default {
     &--death {
       .card-cover {
         background-color: $s-color-death;
+      }
+    }
+
+    &.is-spymaster {
+      background-color: $s-color-neutral;
+      /* offset-x | offset-y | blur-radius | color */
+      box-shadow: 0 0 3rem rgba($s-color-neutral, 0.65);
+
+      &.#{$c}--red {
+        background-color: $s-color-red;
+        box-shadow: 0 0 3rem rgba($s-color-red, 0.65);
+        
+        span {
+          color: $s-color-white;
+        }
+      }
+      &.#{$c}--blue {
+        background-color: $s-color-blue;
+        box-shadow: 0 0 3rem rgba($s-color-blue, 0.65);
+
+        span {
+          color: $s-color-white;
+        }
+      }
+      &.#{$c}--death {
+        background-color: $s-color-death;
+        box-shadow: 0 0 3rem rgba($s-color-white, 0.35);
+
+        span {
+          color: $s-color-white;
+        }
       }
     }
   }

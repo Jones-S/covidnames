@@ -57,6 +57,9 @@ export default {
       &--check {
         background-image: url('~@/assets/icons/check.svg');
       }
+      &--check-white {
+        background-image: url('~@/assets/icons/check-white.svg');
+      }
     }
 
     &__text {
