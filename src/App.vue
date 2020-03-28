@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="['App', { 'is-dark' : spymasterView }]">
     <Header />
     <Deck v-if="cards" :cards="cards" />
     <Input />
@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import Input from './components/Input.vue'
 import Deck from './components/Deck.vue'
 import Header from './components/Header.vue'
@@ -20,7 +20,8 @@ export default {
     Header
   },
   computed: {
-    ...mapGetters('ui', ['cards'])
+    ...mapGetters('ui', ['cards']),
+    ...mapState('ui', ['spymasterView'])
   }
 }
 </script>
@@ -29,4 +30,16 @@ export default {
 @import '@/assets/css/global';
 @import '@/assets/css/_generic.normalize';
 @import '@/assets/css/_elements.page';
+
+$c: 'App';
+
+.#{$c} {
+  height: 100%;
+  min-height: 100%;
+  transition: background-color $s-animation-duration-default;
+
+  &.is-dark {
+    background-color: $s-color-black;
+  }
+}
 </style>

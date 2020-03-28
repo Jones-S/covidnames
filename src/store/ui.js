@@ -10,7 +10,8 @@ const state = {
   current25Words: [],
   seed: 'random',
   starterTeam: false,
-  gamePattern: []
+  gamePattern: [],
+  spymasterView: false
 }
 
 const shuffle = (array) => {
@@ -34,6 +35,9 @@ const shuffle = (array) => {
 
 // actions
 const actions = {
+  toggleSpyMaster({ commit }) {
+    commit('TOGGLE_SPYMASTER')
+  },
   changeSeed({ commit, dispatch }, payload) {
     commit('SAVE_SEED', payload)
     dispatch('setRandomizedData')
@@ -76,6 +80,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  TOGGLE_SPYMASTER(state) {
+    state.spymasterView = !state.spymasterView
+  },
   SAVE_SEED(state, seed) {
     state.seed = seed
   },
