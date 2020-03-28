@@ -1,10 +1,10 @@
 <template>
-  <div class="SpyMasterHeader">
-    <div class="SpyMasterHeader__left-side">
+  <div class="GameHeader">
+    <div class="GameHeader__left-side">
       <Light :color="starterTeam === 1 ? 'red' : 'blue'" />
       <span>{{ starterTeam === 1 ? 'Rot' : 'Blau' }} beginnt.</span>
     </div>
-    <div class="SpyMasterHeader__right-side">
+    <div class="GameHeader__right-side">
       <Score />
     </div>
   </div>
@@ -16,7 +16,7 @@ import Light from './Light.vue'
 import Score from './Score.vue'
 
 export default {
-  name: 'SpyMasterHeader',
+  name: 'GameHeader',
   components: {
     Score,
     Light
@@ -30,7 +30,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import '@/assets/css/global';
-  $c: 'SpyMasterHeader';
+  $c: 'GameHeader';
   
   .#{$c} {
     padding: $s-size-spacer-small $s-size-gutter-small;
