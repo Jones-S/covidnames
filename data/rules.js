@@ -36,7 +36,7 @@ export default [
     Wenn du der Geheimdienstchef bst, musst du dir einen Hinweis aus genau einem Wort ausdenken, der sich auf einige der Wortkarten bezieht, die dein Team finden soll.
     Sobald du glaubst, ein gutes Hinweiswort gefunden zu haben, sagst du es.
     Ausserdem sagst du eine Zahl, die deinen Teamkollegen angeben soll, auf wie viele Wortkarten sich der Hinweis bezieht.
-    Beispiel: Zwei deiner Wortkarten sind NUSS und KRONE. Beides findet man an Bäumen, also sagst du «Baum: 2»—
+    Beispiel: Zwei deiner Wortkarten sind <strong>NUSS</strong> und <strong>KRONE</strong>. Beides findet man an Bäumen, also sagst du «Baum: 2»—
     Du darfst zwar auch bloss einen Hinweis für eine einzige Wortkarte geben («Cashew: 1»), aber spannender ist es, mehr zu probieren. 
     Vier Wortkarten mit einem einzigen Hinweis zu beschreiben ist schon extrem gut.`
   },
@@ -73,18 +73,18 @@ export default [
     Manchmal möchte man vielleicht sogar ein mehr erraten als angegeben:
     <br><br>
     Beispiel: 
-    Der erste Hinweis für das Team Rot war «Baum: 2». Die rote Ermittlerin würde auf ORANGE und NUSS tippen. 
-    Zuerst zeigt sie auf ORANGE.<br>
-    Leider war das ein unbeteiligter Zuschauer, also darf sie nicht auch noch auf NUSS zeigen.
+    Der erste Hinweis für das Team Rot war «Baum: 2». Die rote Ermittlerin würde auf <strong>ORANGE</strong> und <strong>NUSS</strong> tippen. 
+    Zuerst zeigt sie auf <strong>ORANGE</strong>.<br>
+    Leider war das ein unbeteiligter Zuschauer, also darf sie nicht auch noch auf <strong>NUSS</strong> zeigen.
     Team Blau ist am Zug und errät zwei Wörter korrekt.
     jetzt ist Team Rot dran.<br>
     Der rote Geheimdienstchef sagt «Fluss: 3».<br>
-    Die rote Ermittlerin ist sich sehr sicher, dass STROM ein anderes Wort für Fluss sein kann und zeigt darauf.
+    Die rote Ermittlerin ist sich sehr sicher, dass <strong>STROM</strong> ein anderes Wort für Fluss sein kann und zeigt darauf.
     Die Wortkarte wird mit einer roten Agentenkarte abgedeckt, also darf sie weitermachen.
-    Ein Fluss hat ein BETT, also berührt sie diese Wortkarte.
+    Ein Fluss hat ein <strong>BETT</strong>, also berührt sie diese Wortkarte.
     Auch das war korrekt, also macht sie weiter.
     Beim dritten Wort zu Fluss ist sie sich unsicher.
-    Sie wählt NUSS.<br>
+    Sie wählt <strong>NUSS</strong>.<br>
     Mit Fluss hat das nichts zu tun.
     Sie rät nämlich ein Wort des vorherigen Hinweises.
     NUSS ist tatsächlich ein rotes Wort.
@@ -105,11 +105,12 @@ export default [
     title: 'Spielende',
     text: `Das Spiel endet, sobald ein Team alle seine Wortkarten abgedeckt hat. Dieses Team gewinnt.
     Es kann vorkommen, dass ihr im Zug des anderen Teams gewinnt, falls dieses auf eure letzte Wortkarte tippt.
-    Das Spiel kann vorzeitig enden, wenn die Ermittler Kontakt zum Attentäter aufnehmen.
-    Dieses Ermittlerteam verliert
-
-    Strafe für unerlaubte Hinweise:
-    Wenn ein Geheimdienstchef einen nicht erlaubten Hinweis gibt, endet der Zug seines Teams sofort.
+    Das Spiel kann vorzeitig enden, wenn ein Team den schwarzen Begriff anklickt. Dieses Ermittlerteam verliert`
+  },
+  {
+    title: 'Strafe für unerlaubte Hinweise:',
+    level: 3,
+    text: `Wenn ein Geheimdienstchef einen nicht erlaubten Hinweis gibt, endet der Zug seines Teams sofort.
     Ausserdem darf der gegnerische Geheimdienstchef eines seiner Wörter mit einer Agentenkarte aufdecken, bevor er den nächsten Hinweis gibt.
     Wenn allerdings niemanden auffällt, dass ein Hinweis unerlaubt ist, passiert nichts.`
   },
@@ -137,23 +138,23 @@ export default [
     title: false,
     text: `"Dein Hinweis muss mir den Wortbedeutungen zu tun haben!"
     Du darfst also keine Hinweise über die Buchstaben in einem Wort geben oder seine Lage auf dem Spielfeld.
-    Enkel ist kein erlaubter Hinweis für SCHENKEL.
-    Man darf BAR, BAU und BUS weder durch einen Hinweis wie "B:3" noch durch "Drei:3" verbinden.
-    Allerdings...
+    Enkel ist kein erlaubter Hinweis für <strong>SCHENKEL</strong>.
+    Man darf BAR, BAU und BUS weder durch einen Hinweis wie "B: 3" noch durch "Drei:3" verbinden.
+    Allerdings...<br><br>
 
     "Buchstaben und Zahlen sind erlaubte Hinweise, wenn sie sich auf Bedeutungen beziehen!"
-    Also könnte man "U:2" als Hinweis für BAHN und BOOT benutzen. 
-    Man darf "Zwei:3" als Hinweis für BEIN, POL und RAD verwenden.
+    Also könnte man "U:2" als Hinweis für <strong>BAHN</strong> und <strong>BOOT</strong> benutzen. 
+    Man darf "Zwei:3" als Hinweis für <strong>BEIN</strong>, <strong>POL</strong> und <strong>RAD</strong> verwenden.<br><br>
 
     "Die Zahl hinter dem Hinweis darf nicht selber ein Hinweis sein!"
-    "Sauer:8" ist kein erlaubter Hinweis für ZITRONE und OKTOPUS.
+    "Sauer:8" ist kein erlaubter Hinweis für <strong>ZITRONE</strong> und <strong>OKTOPUS</strong>.<br><br>
 
-    "Man muss auf Deutsch spielen!"
+    "Man muss auf Deutsch spielen!"<br><br>
     Ein Fremdwort ist nur dann erlaubt, wenn die Spieler es auch in einem deutschen Satz anwenden würden.
-    zum Beispiel darf man Beach nicht als Hinweis für MEER und MUSCHEL verwenden. Beachparty wäre aber erlaubt.
+    zum Beispiel darf man Beach nicht als Hinweis für <strong>MEER</strong> und <strong>MUSCHEL</strong> verwenden. Beachparty wäre aber erlaubt.<br><br>
 
     "Man darf keine Form eines Wortes nennen, das sichtbar auf dem Spielfeld liegt!"
-    So lange BRUCH nicht von einer Karte abgedeckt ist, darf man Bruch, brechen, Abbruch o.ä. nicht sagen.
+    So lange BRUCH nicht von einer Karte abgedeckt ist, darf man Bruch, brechen, Abbruch o.ä. nicht sagen.<br><br>
 
     "Man darf keinen Teil eines zusammengesetzten Worts auf dem Spielfeld nenn!"
     Solange BERGSTEIGER nicht von einer Karte abgedeckt ist, darf man Berg, Steiger oder steigen etc. nicht sagen.`
@@ -164,14 +165,14 @@ export default [
     Zum Beispiel klingt Saite wie Seite, allerdings haben die beiden Wörter eine unterschiedliche Bedeutung.
 
     "Gleich klingende Wörter mit unterschiedlicher Bedeutung und unterschiedlicher Schreibweise gelten als unterschiedliche Wörter".
-    Also dürfte man keine Hinweise zur Leere geben, aber die LEHRE meinen.
+    Also dürfte man keine Hinweise zur Leere geben, aber die <strong>LEHRE</strong> meinen.
 
     "Wörter, die absolut gleich geschrieben werden, gelten als dasselbe Wort, selbst wenn sie unterschiedliche Aussprachen oder Bedeutung haben".
-    Zum Beispiel kann Abzug eine Entlüftung sein der der Hebel zum Auslösen eine Waffe, also ist Abzug ein erlaubter Hinweis sowohl für PISTOLE als auch LUFT.
+    Zum Beispiel kann Abzug eine Entlüftung sein der der Hebel zum Auslösen eine Waffe, also ist Abzug ein erlaubter Hinweis sowohl für <strong>PISTOLE</strong> als auch <strong>LUFT</strong>.
     August z.B. darf, auch wenn es unterschiedlich betont wird, als Hinweis für Vornamen bzw. Clown oder für den Monat benutzt werden.
 
     "Man darf seinen Hinweis buchstabieren".
-    Will man seinen Mitspielern zum Beispiel MÜHLE und KIEFER erklären, darf man mahlen auch m-a-h-l-e-n buchstabieren.
+    Will man seinen Mitspielern zum Beispiel <strong>MÜHLE</strong> und <strong>KIEFER</strong> erklären, darf man mahlen auch m-a-h-l-e-n buchstabieren.
     Man darf den Hinweis M-a-h-l geben, selbst wenn MAL eine der Wortkarten auf dem Spielfeld ist.
     (Man dürfte aber nicht C-i-t-r-o-n-e benutzen, wenn ZITRONE auf dem Spielfeld liegt.)
     Citrone und Zitrone sind unterschiedliche Schreibformen desselben Worts.
@@ -186,7 +187,7 @@ export default [
     title: 'Bitte nicht zu streng:',
     text: `England war ursprünglich mal ein zusammengesetztes Wort, aber in unseren Zeiten steht es für sich, also wäre Ausland ein erlaubter Hinweis für ENGLAND.
     Sogar Land ist als Hinweis für ENGLAND zulässig.
-    Und jemand, der behauptet, man dürfe Ton nur deshalb nicht sagen, weil WASHINGTON auf dem Spielfeld liegt, will wohl bloss Ärger machen.
+    Und jemand, der behauptet, man dürfe Ton nur deshalb nicht sagen, weil <strong>WASHINGTON</strong> auf dem Spielfeld liegt, will wohl bloss Ärger machen.
     Wenn der gegnerische Geheimdienstchef ihn zulässt, ist der Hinweis auch erlaubt.
     bist du also unsicher, frag ihn (geflüstert, oder per WhatsApp ;) damit dich sonst keiner hört).`
   },
@@ -197,6 +198,7 @@ export default [
   },
   {
     title: 'Zusammengesetzte Wörter:',
+    level: 3,
     text: `Deutsch ist weltweit berüchtigt wegen seiner zusammengesetzten Wörter.
     Es gibt zwei Möglichkeiten, solche im Deutschen zu bilden.
     Tischdecke ist ein Wort.
@@ -204,37 +206,41 @@ export default [
     Rinfleischetikettierungsüberwachungsaufgabenübertragungsgesetz war tatsächlich mal ein echtes (und scheussliches) Wort, das mit ein paar Bindestrichen wohl etwas leichter lesbar gewesen wäre.
     (Die Unsitte, zusammengesetzte Wörter im Deutschen mit - falschen- Leerzeichen zu unterbrechen, wollen wir hier nicht weiter diskutieren.)
     Genau genommen können also alle solche Wörter gelten, aber nur, wenn sie dem tatsächlichen Sprachgebrauch entsprechen.
-    Es ist im Deutschen leicht, Komposita einfach zu erfinden: Tentakeltrabant wäre theoretisch ein toller Hinweis z.B. für OKTOPUS, MOND und AUTO, da es aber eine reine Wortschöpfung ist, die man in keinem Wörterbuch findet, darf man es nicht benutzen.
+    Es ist im Deutschen leicht, Komposita einfach zu erfinden: Tentakeltrabant wäre theoretisch ein toller Hinweis z.B. für <strong>OKTOPUS</strong>, <strong>MOND</strong> und <strong>AUTO</strong>, da es aber eine reine Wortschöpfung ist, die man in keinem Wörterbuch findet, darf man es nicht benutzen.
 `
   },
   {
     title: 'Vorsilben',
+    level: 3,
     text: `Das gehört eigentlich zur vorigen Regel, sollte aber explizit erwähnt werden: Einfach ein Wort in sein Gegenteil zu verkehren, indem man eine Silbe wie Kein-, Nicht- oder Un- davor setzt sollte nur erlaubt sein, wenn dieses Wort umgangssprachlich gebräuchlich ist.
-    Unlebendig ist also kein erlaubter Hinweis für TOD, untot dagegen wäre als Hinweis für SKELETT erlaubt.`
+    <strong>Unlebendig</strong> ist also kein erlaubter Hinweis für <strong>TOD</strong>, <strong>untot</strong> dagegen wäre als Hinweis für <strong>SKELETT</strong> erlaubt.`
   },
   {
     title: 'Eigennamen',
+    level: 3,
     text: `Eigennamen sind immer erlaubt, so lange sie den übrigen Regeln folgen.
-    Karl ist ein erlaubter Hinweis. 
+    <strong>Karl</strong> ist ein erlaubter Hinweis. 
     Allerdings möchte man vielleicht verdeutlichen, ob man Karl May oder Karl Marx meint.
     Eure Spielrunde kann beschliessen, dass Eigennamen oder Titel als erlaubter Hinweis gelten.
     Also könnte man Hinweise geben wie Die drei Musketiere.
     Wenn ihr Eigennamen aus mehreren Wörtern jedoch strikt verbieten wollt, solltet ihr zumindest Ausnahmen für Ortsbezeichnungen wie New York zulassen.
     Geheimdienstchefs dürfen keine Namen erfinden, nicht mal solche, die sich z.B. bei einer anschliessenden Internet-Recherche überraschenderweise als real erweisen sollten.
-    Hirn-Am-Hang ist kein erlaubter Hinweis für CHINA und BERGSTEIGER.`
+    Hirn-Am-Hang ist kein erlaubter Hinweis für <strong>CHINA</strong> und <strong>BERGSTEIGER</strong>.`
   },
   {
     title: 'Abkürzungen',
-    text: `CIA ist genau genommen kein Wort, könnte aber ein prima Hinweis sein. 
-    Beschliesst einfach, allgemeingültige Abkürzungen wie BRD, lol, DVD als Hinweise zuzulassen.
-    Wörter wie Laser, Radar und Sonar sind natürlich sowieso erlaubt, obwohl sie ursprünglich Kurzwörter waren.
+    level: 3,
+    text: `<strong>CIA</strong> ist genau genommen kein Wort, könnte aber ein prima Hinweis sein. 
+    Beschliesst einfach, allgemeingültige Abkürzungen wie <strong>BRD</strong>, <strong>lol</strong>, <strong>DVD</strong> als Hinweise zuzulassen.
+    Wörter wie <strong>Laser</strong>, <strong>Radar</strong> und <strong>Sonar</strong> sind natürlich sowieso erlaubt, obwohl sie ursprünglich Kurzwörter waren.
 `
   },
   {
     title: 'Reime',
+    level: 3,
     text: `Reime sind nur dann erlaubt, wenn sie sich auch auf Bedeutungen beziehen.
-    Butter ists ein erlaubter Hinweis für FUTTER, denn man kann Butter ja futtern.
-    Butter ist kein erlaubter Hinweis für MUTTER, denn die Assoziation ergibt sich bloss über den Reim.
+    Butter ists ein erlaubter Hinweis für <strong>FUTTER</strong>, denn man kann Butter ja futtern.
+    Butter ist kein erlaubter Hinweis für <strong>MUTTER</strong>, denn die Assoziation ergibt sich bloss über den Reim.
     (Sollte jemand in der Gruppe ein weibliches Elternteil besitzen, das für sein hausgemachtes Streichfett berühmt ist, wäre der Hinweis natürlich absolut zulässig.)
     Manche Leute erlauben gereimt Hinweise grundsätzlich.
     Wenn man das auch möchte, darf man jedoch beim geben des Hinweises nicht darauf hinweisen, dass es sich um einen Reim handelt.
@@ -242,7 +248,7 @@ export default [
 `
   },
   {
-    title: 'Für Experten: NULL',
+    title: 'Für Experten: <strong>NULL</strong>',
     text: `Es ist erlaubt die 0 als Zahlenangabe beim Hinweis zu benutzen.
     So würde "Geflügel:0" bedeuten: >>Keins eurer Wörter hat mit Geflügel zu tun.<<
     Wenn 0 als Zahl genannt wird, gilt die Regel für die Höchstzahl an Rateversuchen nicht.
@@ -251,7 +257,7 @@ export default [
     Wenn ihr euch jetzt nicht vorstellen könnte, warum das nützlich sein könnte, keine Sorge: Ihr werdet es herausfinden.`
   },
   {
-    title: 'Für Experten: UNBEGRENZT',
+    title: 'Für Experten: <strong>UNBEGRENZT</strong>',
     text: `Manchmal bleiben auf früheren Runden haufenweise nicht erratene Begriffe älterer Hinweise übrig.
     Wenn du möchtest, dass dein Team mehr als einen davon errät, kannst du statt einer zahl einfach unbegrenzt sagen.
     Zum Beispiel "Federn:unbegrenzt".
