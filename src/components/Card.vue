@@ -101,9 +101,13 @@ export default {
     border-radius: 0.8rem; 
     position: relative;
     overflow: hidden;    
-    padding: $s-size-spacer-small / 2;
+    padding: $s-size-spacer-small / 4;
     transition: background-color $s-animation-duration-default, box-shadow $s-animation-duration-default;
     cursor: pointer;
+
+    @include mq($from: small) {
+      padding: $s-size-spacer-small / 2;
+    }
 
     @include mq($from: medium) {
       cursor: auto;

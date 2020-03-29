@@ -41,6 +41,10 @@ export default {
     &__item {
       @include font-style-base;
       margin-left: 2em;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     span {

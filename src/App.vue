@@ -103,14 +103,33 @@ export default {
     openInfo() {
       this.toggleInfo()
     }
-  }
+  },
+  metaInfo:() => {
+    const ogImageUrl = require('@/assets/covidnames_og.jpg');
+    return {
+      title: 'CovidNames – CodeNames in Quarantäne-Zeiten',
+      htmlAttrs: {
+        // reptilian: 'gator'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: 'Spiele CodeNames trotz Social Distancing.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { property: 'og:image', content: ogImageUrl },
+        { name: 'og:image:width', content: 1080 },
+        { name: 'og:image:height', content: 724 },
+        { name: 'og:image:alt', content: 'CovidNames – CodeNames Spiel' }
+      ]
+    }
+  },
 }
 </script>
 
 <style lang="scss">
-@import '@/assets/css/global';
 @import '@/assets/css/_generic.normalize';
+@import '@/assets/css/_generic.fonts';
 @import '@/assets/css/_generic.box-sizing';
+@import '@/assets/css/global';
 @import '@/assets/css/_elements.page';
 
 $c: 'App';
@@ -123,9 +142,14 @@ $c: 'App';
 
   .IconButton-container {
     position: fixed;
-    bottom: $s-size-spacer-medium;
-    right: $s-size-spacer-medium;
+    bottom: $s-size-spacer-small + ($s-size-spacer-small / 2);
+    right: $s-size-spacer-small + ($s-size-spacer-small / 2);
     z-index: z('iconbuttons');
+
+    @include mq($from: large) {      
+      bottom: $s-size-spacer-medium;
+      right: $s-size-spacer-medium;
+    }
 
     .IconButton {
       margin-top: 1em;

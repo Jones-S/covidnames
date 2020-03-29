@@ -43,6 +43,10 @@ export default {
     transition: background-color $s-animation-duration-default;
   }
 
+  @include mq($from: large) {
+    padding: 0 $s-size-gutter-medium;
+  }
+
   // spymaster view
   .is-dark {
     .#{$c} {

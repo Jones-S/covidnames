@@ -44,6 +44,7 @@ export default {
     display: inline-flex;
     width: auto;
     align-items: center;
+    padding: 0;
 
     &__text {
       @include font-style-base;

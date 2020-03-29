@@ -39,7 +39,12 @@ export default {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    
+    @include mq($from: medium) {
+      flex-wrap: nowrap;
+    }
 
     span {
       @include font-style-base;
@@ -50,6 +55,11 @@ export default {
     &__right-side {
       display: flex;
       align-items: center;
+      margin-bottom: 1em;
+    }
+    
+    &__left-side {
+      margin-right: 1em;
     }
   }
   // spymaster view
