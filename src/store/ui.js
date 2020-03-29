@@ -50,6 +50,9 @@ const actions = {
   toggleGameDialog({ commit }) {
     commit('TOGGLE_GAME_DIALOG')
   },
+  closeGameDialog({ commit }) {
+    commit('CLOSE_GAME_DIALOG')
+  },
   updateScore({ commit }, payload) {
     if (payload === TEAM_BLUE || payload === TEAM_RED ) {
       commit('INCREASE_COUNT', payload)
@@ -105,6 +108,9 @@ const mutations = {
   },
   TOGGLE_GAME_DIALOG(state) {
     state.gameDialogOpen = !state.gameDialogOpen
+  },
+  CLOSE_GAME_DIALOG(state) {
+    state.gameDialogOpen = false
   },
   SAVE_SEED(state, seed) {
     state.seed = seed

@@ -17,7 +17,7 @@
         <Heading v-if="section.title" :level="section.level || 2">{{ section.title }}</Heading>
         <Paragraph :content="section.text">
         </Paragraph>
-        <RegenerateForm />
+        <RegenerateForm ref="form" />
       </div>
     </SideContainer>
     <div class="IconButton-container">
@@ -111,13 +111,14 @@ export default {
         {
           title: 'Info',
           text: `
-            Dieses Web-App dient dem alleinigen Zweck das Spiel «CodeNames» auch während Corona-Zeiten zu spielen. Für Inputs, Kommentare oder Sonstiges, darf man mich gerne kontaktieren:<br><br>
+            Dieses Web-App dient dem alleinigen Zweck das Spiel «CodeNames» auch während Corona-Zeiten zu spielen. Für Inputs, Kommentare oder Sonstiges, darf man mich gerne kontaktieren:<br><br>
             <a href"mailto:covidnames@jonasscheiwiller.ch">covidnames@jonasscheiwiller.ch</a><br><br>
             Achtung: Dieses Web-App hat nicht den Anspruch auf allen Geräten oder in allen Browser zu funktionieren. Probiert es aus, nehmt einen modernen Browser und bleibt gesund!<br><br>
             Viel Spass!
           `
         },
-      ]
+      ],
+      pressedKeys: []
     }
   },
   computed: {
@@ -128,10 +129,27 @@ export default {
     ...mapActions('ui', ['toggleInfo', 'toggleGameDialog']),
     openNewGameDialog() {
       this.toggleGameDialog()
+      // this.$refs.form[0].focus() // when using ref in a v-for we get an array
     },
     openInfo() {
       this.toggleInfo()
     }
+  },
+  mounted() {
+    // init event listeners
+    document.addEventListener('keydown', event => {
+      this.pressedKeys.push(event.keyCode)
+
+      // check other pressed keys
+      const ctrl = this.pressedKeys.includes(17) // ctrl
+      const n = this.pressedKeys.includes(78) // n
+      if (ctrl && n) {
+        this.openNewGameDialog()
+      }
+    });
+    document.addEventListener('keyup', event => {
+      this.pressedKeys = this.pressedKeys.filter(key => key !== event.keyCode)
+    });
   },
   metaInfo:() => {
     const ogImageUrl = require('@/assets/covidnames_og.jpg');

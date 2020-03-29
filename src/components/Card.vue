@@ -1,7 +1,7 @@
 <template>
   <v-breakpoint>
     <!-- https://github.com/adi518/vue-breakpoint-component#template -->
-    <div v-if="card" :class="['Card', typeModifier(card.type), { 'is-spymaster' : spymasterView }]" slot-scope="scope" @click="revealMobile(scope.innerWidth)">
+    <div v-if="card" :class="['Card', typeModifier(card.type), { 'is-spymaster' : spymasterView, 'is-hidden' : isHidden }]" slot-scope="scope" @click="revealMobile(scope.innerWidth)">
       <div :class="['card-cover', { 'is-revealed' : revealed, 'is-checking': isChecking }]"></div>
       <span>{{ card.text }}</span>
         <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="spymasterView && card.type === 3 ? 'check-white' : 'check'" />
@@ -33,18 +33,24 @@ export default {
       isChecking: false,
       sadTromboneSound: false,
       failSound: false,
-      successSound: false
+      successSound: false,
+      isHidden: false
     }
   },
   props: {
     card: {
-      type: Object,
+      type: [Object, Boolean],
       required: true,
-      default: () => false
+      default: false
     }
   },
   computed: {
     ...mapState('ui', ['spymasterView'])
+  },
+  watch: {
+    $route() {
+      this.resetCard()
+    }
   },
   mounted() {
     this.sadTromboneSound = new Audio(require('@/assets/sad_trombone.mp3'))
@@ -71,6 +77,9 @@ export default {
       }
       return modifier
     },
+    mounted() {
+      this.revealed = this.initalState
+    },
     reveal() {
       this.revealed = true
       if (this.card.type === DEATH_CARD) {
@@ -93,6 +102,21 @@ export default {
     },
     check() {
       this.isChecking = !this.isChecking
+    },
+    resetCard() {
+      this.hideCard()
+      this.revealed = false
+      this.isChecking = false
+      // wait to make sure the animation has ended
+      setTimeout(() => {
+        this.showCard()
+      }, 400);
+    },
+    hideCard() {
+      this.isHidden = true
+    },
+    showCard() {
+      this.isHidden = false
     }
   }
 }
@@ -189,6 +213,9 @@ export default {
           color: $s-color-white;
         }
       }
+    }
+    &.is-hidden {
+      opacity: 0;
     }
   }
 

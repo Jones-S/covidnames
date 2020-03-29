@@ -27,11 +27,12 @@ export default {
     this.checkRoute()
   },
   methods: {
-    ...mapActions('ui', ['changeSeed']),
+    ...mapActions('ui', ['changeSeed', 'closeGameDialog']),
     regenerate() {
       this.activeSeed = this.input
       this.changeSeed(this.input)
       this.setRoute(this.input)
+      this.closeGameDialog()
     },
     checkRoute() {
       let query =
