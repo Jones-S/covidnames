@@ -63,6 +63,11 @@ const actions = {
     dispatch('setRandomizedData')
   },
   setRandomizedData({ commit, state }) {
+    // reset some things
+    state.score = {
+      red: 0,
+      blue: 0
+    }
     // do all random stuff here to have some control in which steps they occur
     // first create a new seedrandom
     // which makes Math.random() predictable from here on
