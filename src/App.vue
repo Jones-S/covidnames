@@ -83,7 +83,7 @@ export default {
           text: `
             <ol>
               <li>Alle Spieler öffnen die Seite in einem modernen Browser.</li>
-              <li>Jemand beginnt ein neues Spiel und gibt einen Seed ein. Dieser Seed beeinflusst den Zufallsfaktor so, dass beim gleichen Seed immer dasselbe zufällige Spiel erscheint.</li>
+              <li>Jemand beginnt ein neues Spiel und gibt dazu ein willkürliches Wort ein. Dieses Wort (Seed) beeinflusst den Zufallsfaktor so, dass beim gleichen Seed immer dasselbe zufällige Spiel erscheint.</li>
               <li>Die Spielemacher öffnen beide ihre Ansicht und das Spiel startet wie gewohnt.</li>
               <li>Für das Aufdecken von Kärtchen klickt man auf das Häkchen.</li>
             </ol>

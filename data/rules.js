@@ -248,7 +248,7 @@ export default [
 `
   },
   {
-    title: 'Für Experten: <strong>NULL</strong>',
+    title: 'Für Experten: NULL',
     text: `Es ist erlaubt die 0 als Zahlenangabe beim Hinweis zu benutzen.
     So würde "Geflügel:0" bedeuten: >>Keins eurer Wörter hat mit Geflügel zu tun.<<
     Wenn 0 als Zahl genannt wird, gilt die Regel für die Höchstzahl an Rateversuchen nicht.
@@ -257,7 +257,7 @@ export default [
     Wenn ihr euch jetzt nicht vorstellen könnte, warum das nützlich sein könnte, keine Sorge: Ihr werdet es herausfinden.`
   },
   {
-    title: 'Für Experten: <strong>UNBEGRENZT</strong>',
+    title: 'Für Experten: UNBEGRENZT',
     text: `Manchmal bleiben auf früheren Runden haufenweise nicht erratene Begriffe älterer Hinweise übrig.
     Wenn du möchtest, dass dein Team mehr als einen davon errät, kannst du statt einer zahl einfach unbegrenzt sagen.
     Zum Beispiel "Federn:unbegrenzt".
