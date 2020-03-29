@@ -33,6 +33,7 @@ export default {
     height: 100%;
     max-width: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     padding: $s-size-spacer-medium;
     background: $s-color-white;
     transition: right $s-animation-duration-default;
