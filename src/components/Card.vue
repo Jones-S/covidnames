@@ -106,7 +106,8 @@ export default {
   .#{$c} {
     background-color: $s-color-white;
     /* offset-x | offset-y | blur-radius | color */
-    box-shadow: 0 0 3rem rgba($s-color-black, 0.3);
+    box-shadow: 0 0 1.5rem;
+    color: rgba($s-color-black, 0.3); // box shadow color
     border-radius: 0.8rem; 
     position: relative;
     overflow: hidden;    
@@ -115,10 +116,12 @@ export default {
     cursor: pointer;
 
     @include mq($from: small) {
+      box-shadow: 0 0 2rem;
       padding: $s-size-spacer-small / 2;
     }
 
     @include mq($from: medium) {
+      box-shadow: 0 0 3rem;
       cursor: auto;
     }
 
@@ -160,11 +163,11 @@ export default {
     &.is-spymaster {
       background-color: $s-color-neutral;
       /* offset-x | offset-y | blur-radius | color */
-      box-shadow: 0 0 3rem rgba($s-color-neutral, 0.65);
+      color: rgba($s-color-neutral, 0.65);
 
       &.#{$c}--red {
         background-color: $s-color-red;
-        box-shadow: 0 0 3rem rgba($s-color-red, 0.65);
+        color: rgba($s-color-red, 0.65);
         
         span {
           color: $s-color-white;
@@ -172,7 +175,7 @@ export default {
       }
       &.#{$c}--blue {
         background-color: $s-color-blue;
-        box-shadow: 0 0 3rem rgba($s-color-blue, 0.65);
+        color: rgba($s-color-blue, 0.65);
 
         span {
           color: $s-color-white;
@@ -180,7 +183,7 @@ export default {
       }
       &.#{$c}--death {
         background-color: $s-color-death;
-        box-shadow: 0 0 3rem rgba($s-color-white, 0.35);
+        color: rgba($s-color-white, 0.35);
 
         span {
           color: $s-color-white;

@@ -67,6 +67,7 @@ export default {
 
   input {
     @include font-style-base;
+    -webkit-appearance: none; // messes box shadow up
     width: 100%;
     padding: 0.6em 1em;
     border: 0;
