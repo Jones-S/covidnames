@@ -38,6 +38,6 @@ export default {
     max-width: $s-size-content-max-width-large + 2 * $s-size-spacer-small;
     max-height: $s-size-content-max-width-large + 2 * $s-size-spacer-small;
     margin: 0 auto;
-    margin-bottom: 14rem;
+    padding-bottom: 14rem;
   }
 </style>
