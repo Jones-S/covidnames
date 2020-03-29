@@ -80,25 +80,38 @@ export default {
   $c: 'Card';
 
   .#{$c} {
-    @include font-style-cards;
     background-color: $s-color-white;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 0 0 3rem rgba($s-color-black, 0.3);
     border-radius: 0.8rem; 
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     position: relative;
     overflow: hidden;    
-    padding: 1rem;
-    height: $s-card-size;
-    width: $s-card-size;
+    padding: $s-size-spacer-small / 2;
+    // height: calc(20vw - #{$s-card-spacer-mobile});
+    // width: calc(20vw - #{$s-card-spacer-mobile});
+    // width: 100%;
     transition: background-color $s-animation-duration-default, box-shadow $s-animation-duration-default;
 
+    // @include mq($from: 1150) {
+      //   height: $s-card-size;
+    //   width: $s-card-size;
+    // }
+    &::before {
+      content: "";
+      padding-bottom: 100%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
     span {
+      @include font-style-cards;
       color: $s-color-black;
       display: block;
-      font-size: $s-fz-25;
+      width: calc(100% - #{$s-size-spacer-small});
+      position: absolute;
+      top: 50%;
+      left: $s-size-spacer-small / 2;
+      transform: translateY(-50%);
       transition: color $s-animation-duration-default;
     }
 

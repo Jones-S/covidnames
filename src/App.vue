@@ -116,10 +116,10 @@ export default {
 $c: 'App';
 
 .#{$c} {
-
   height: 100%;
   min-height: 100%;
   transition: background-color $s-animation-duration-default;
+
 
   .IconButton-container {
     position: fixed;
