@@ -18,6 +18,7 @@ import IconButton from './IconButton.vue'
 
 const TEAM_BLUE = 0;
 const TEAM_RED = 1;
+const NEUTRAL_CARD = 2;
 const DEATH_CARD = 3;
 
 export default {
@@ -30,7 +31,9 @@ export default {
     return {
       revealed: false,
       isChecking: false,
-      sadTromboneSound: false
+      sadTromboneSound: false,
+      failSound: false,
+      successSound: false
     }
   },
   props: {
@@ -45,6 +48,8 @@ export default {
   },
   mounted() {
     this.sadTromboneSound = new Audio(require('@/assets/sad_trombone.mp3'))
+    this.failSound = new Audio(require('@/assets/fail.mp3'))
+    this.successSound = new Audio(require('@/assets/success.mp3'))
   },
   methods: {
     ...mapActions('ui', ['updateScore']),
@@ -70,6 +75,10 @@ export default {
       this.revealed = true
       if (this.card.type === DEATH_CARD) {
         this.sadTromboneSound.play()
+      } else if (this.card.type === NEUTRAL_CARD) {
+        this.failSound.play()
+      } else if (this.card.type === TEAM_BLUE || this.card.type === TEAM_RED) {
+        this.successSound.play()
       }
       this.updateScore(this.card.type) // send index to update score
     },

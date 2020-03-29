@@ -3,7 +3,7 @@
     <Header />
     <GameHeader/>
     <Deck v-if="cards" :cards="cards" />
-    <SideContainer :is-open="gameDialogOpen">
+    <SideContainer :is-open="infoOpen">
       <Heading :level="1">CovidNames – das CodeNames in Quarantäne-Zeiten</Heading>
       <div v-for="(section, index) in infoSections" :key="index">
         <Heading v-if="section.title" :level="2">{{ section.title }}</Heading>
@@ -11,7 +11,7 @@
         </Paragraph>
       </div>
     </SideContainer>
-    <SideContainer :is-open="infoOpen">
+    <SideContainer :is-open="gameDialogOpen">
       <Heading :level="1">Neues Spiel starten</Heading>
       <div v-for="(section, index) in newGameSections" :key="index">
         <Heading v-if="section.title" :level="2">{{ section.title }}</Heading>
