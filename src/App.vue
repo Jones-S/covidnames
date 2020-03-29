@@ -118,7 +118,8 @@ export default {
         { property: 'og:image', content: ogImageUrl },
         { name: 'og:image:width', content: 1080 },
         { name: 'og:image:height', content: 724 },
-        { name: 'og:image:alt', content: 'CovidNames – CodeNames Spiel' }
+        { name: 'og:image:alt', content: 'CovidNames – CodeNames Spiel' },
+        { name: 'google-site-verification', content: 'UPa71x3tPCLiPWdE0Vj1UwAmUzPGVbmlMU0YJg7WMWg' }
       ]
     }
   },
