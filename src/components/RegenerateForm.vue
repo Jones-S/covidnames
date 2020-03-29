@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="regenerate()">
-      <input v-model="input" placeholder="Seed">
+      <input class="RegenerateForm__input" v-model="input" placeholder="Seed">
       <Button @click="regenerate()">{{ buttonText }}</Button>
     </form>
   </div>

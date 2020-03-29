@@ -37,6 +37,8 @@ export default {
     padding: $s-size-spacer-medium;
     background: $s-color-white;
     transition: right $s-animation-duration-default;
+    box-shadow: 0 0 3rem;
+    color: rgba($s-color-black, 0.3); // box shadow color
 
     &.is-open {
       right: 0;

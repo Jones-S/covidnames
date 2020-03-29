@@ -129,7 +129,8 @@ export default {
     ...mapActions('ui', ['toggleInfo', 'toggleGameDialog']),
     openNewGameDialog() {
       this.toggleGameDialog()
-      // this.$refs.form[0].focus() // when using ref in a v-for we get an array
+      const input = this.$refs.form[0].$el.querySelector('.RegenerateForm__input');
+      input.focus() // when using ref in a v-for we get an array
     },
     openInfo() {
       this.toggleInfo()
