@@ -28,6 +28,7 @@ export default {
               Heading__content: true
             },
           },
+
           this.$slots.default,
         )
       ]
@@ -43,6 +44,7 @@ export default {
   
   .#{$c} {
     margin-bottom: 0.4em;
+    color: $s-color-black;
 
     &--h1 {
       @include font-style-heading-base;

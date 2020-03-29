@@ -22,6 +22,7 @@ export default {
   
   .#{$c} {
     @include font-style-base;
+    color: $s-color-black;
 
     ol,
     ul {
