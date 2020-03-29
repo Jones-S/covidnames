@@ -113,6 +113,7 @@ export default {
           text: `
             Dieses Web-App dient dem alleinigen Zweck das Spiel «CodeNames» auch während Corona-Zeiten zu spielen. Für Inputs, Kommentare oder Sonstiges, darf man mich gerne kontaktieren:<br><br>
             <a href"mailto:covidnames@jonasscheiwiller.ch">covidnames@jonasscheiwiller.ch</a><br><br>
+            Achtung: Dieses Web-App hat nicht den Anspruch auf allen Geräten oder in allen Browser zu funktionieren. Probiert es aus, nehmt einen modernen Browser und bleibt gesund!<br><br>
             Viel Spass!
           `
         },
