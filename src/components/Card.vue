@@ -1,14 +1,19 @@
 <template>
-  <div v-if="card" :class="['Card', typeModifier(card.type), { 'is-spymaster' : spymasterView }]">
-    <div :class="['card-cover', { 'is-revealed' : revealed, 'is-checking': isChecking }]"></div>
-    <span>{{ card.text }}</span>
-    <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="spymasterView && card.type === 3 ? 'check-white' : 'check'" />
-    <IconButton v-else class="IconButton" @click.native="check" :text="isChecking ? 'Zudecken' : 'Prüfen'" :icon="'eye'" />
-  </div>
+  <v-breakpoint>
+    <!-- https://github.com/adi518/vue-breakpoint-component#template -->
+    <div v-if="card" :class="['Card', typeModifier(card.type), { 'is-spymaster' : spymasterView }]" slot-scope="scope" @click="revealMobile(scope.innerWidth)">
+      <div :class="['card-cover', { 'is-revealed' : revealed, 'is-checking': isChecking }]"></div>
+      <span>{{ card.text }}</span>
+        <IconButton v-if="!revealed" class="IconButton" @click.native="reveal" :text="'Aufdecken'" :icon="spymasterView && card.type === 3 ? 'check-white' : 'check'" />
+        <IconButton v-else class="IconButton" @click.native="check" :text="isChecking ? 'Zudecken' : 'Prüfen'" :icon="'eye'" />
+    </div>
+  </v-breakpoint>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { VBreakpoint } from 'vue-breakpoint-component'
+
 import IconButton from './IconButton.vue'
 
 const TEAM_BLUE = 0;
@@ -18,7 +23,8 @@ const DEATH_CARD = 3;
 export default {
   name: 'Card',
   components: {
-    IconButton
+    IconButton,
+    VBreakpoint
   },
   data() {
     return {
@@ -67,6 +73,15 @@ export default {
       }
       this.updateScore(this.card.type) // send index to update score
     },
+    revealMobile(width) {
+      if (width < 768) { // if we are below medium breakpoint, lets trigger the reveal method without the buttons
+        if (this.revealed) {
+          this.isChecking = !this.isChecking
+        } else {
+          this.reveal()
+        }
+      }
+    },
     check() {
       this.isChecking = !this.isChecking
     }
@@ -87,15 +102,13 @@ export default {
     position: relative;
     overflow: hidden;    
     padding: $s-size-spacer-small / 2;
-    // height: calc(20vw - #{$s-card-spacer-mobile});
-    // width: calc(20vw - #{$s-card-spacer-mobile});
-    // width: 100%;
     transition: background-color $s-animation-duration-default, box-shadow $s-animation-duration-default;
+    cursor: pointer;
 
-    // @include mq($from: 1150) {
-      //   height: $s-card-size;
-    //   width: $s-card-size;
-    // }
+    @include mq($from: medium) {
+      cursor: auto;
+    }
+
     &::before {
       content: "";
       padding-bottom: 100%;
@@ -173,6 +186,7 @@ export default {
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 0 0 2rem rgba($s-color-black, 0.35);
     transition: top $s-animation-duration-default;
+    z-index: 1;
 
     &.is-revealed {
       top: 0;
@@ -188,6 +202,10 @@ export default {
     bottom: 1rem;
     right: 1rem;
     z-index: 10;
+
+    @include mq($to: medium) {
+      display: none;
+    }
   }
 
 </style>

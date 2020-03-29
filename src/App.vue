@@ -117,7 +117,7 @@ $c: 'App';
 
 .#{$c} {
   height: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   transition: background-color $s-animation-duration-default;
 
 

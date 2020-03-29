@@ -26,6 +26,8 @@ export default {
 <style lang="scss" scoped>
   @import '@/assets/css/global';
 
+  $c-deck-calculated-card-height: calc((100vh - 20rem) / 5 - 1rem);
+
   .Deck {
     display: grid;
     justify-content: center;
@@ -36,18 +38,5 @@ export default {
     max-width: $s-size-content-max-width-large + 2 * $s-size-spacer-small;
     max-height: $s-size-content-max-width-large + 2 * $s-size-spacer-small;
     margin: 0 auto;
-
-    @media only screen and (orientation: landscape) {
-      & {
-        grid-template-columns: repeat(5, 1fr [col-start]);
-        grid-template-rows: repeat(5, 1fr [col-start]);
-      }
-    } 
-
-    // @include mq($from: 1150) {
-    //   grid-template-columns: repeat(5, ($s-card-size + ($s-card-spacer)) [col-start]);
-    //   grid-template-rows: repeat(5, ($s-card-size + ($s-card-spacer)) [col-start]);
-    //   grid-gap: $s-card-spacer $s-card-spacer;
-    // }
   }
 </style>

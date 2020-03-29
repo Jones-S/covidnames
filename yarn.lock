@@ -5071,6 +5071,11 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
 lodash.transform@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.transform/-/lodash.transform-4.6.0.tgz#12306422f63324aed8483d3f38332b5f670547a0"
@@ -8343,6 +8348,14 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+vue-breakpoint-component@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/vue-breakpoint-component/-/vue-breakpoint-component-1.2.6.tgz#a76cd743242b2ce720077f9df1d58d287dee1554"
+  integrity sha512-m2q2xNFmtCSMOvN2/v7DcpVTO0jBl16e5XxP1ag+eYtliR4rjmi8wRbbVONzRzH8eodmksz9RuQrmOHr8mnaeA==
+  dependencies:
+    lodash "^4.17.15"
+    lodash.merge "^4.6.2"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
