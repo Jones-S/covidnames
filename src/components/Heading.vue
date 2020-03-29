@@ -51,5 +51,9 @@ export default {
     &--h2 {
       @include font-style-heading-base;
     }
+
+    &--h3 {
+      @include font-style-heading-3;
+    }
   }
 </style>

@@ -6,7 +6,7 @@
     <SideContainer :is-open="infoOpen">
       <Heading :level="1">CovidNames – das CodeNames in Quarantäne-Zeiten</Heading>
       <div v-for="(section, index) in infoSections" :key="index">
-        <Heading v-if="section.title" :level="2">{{ section.title }}</Heading>
+        <Heading v-if="section.title" :level="section.level || 2">{{ section.title }}</Heading>
         <Paragraph :content="section.text">
         </Paragraph>
       </div>
@@ -14,7 +14,7 @@
     <SideContainer :is-open="gameDialogOpen">
       <Heading :level="1">Neues Spiel starten</Heading>
       <div v-for="(section, index) in newGameSections" :key="index">
-        <Heading v-if="section.title" :level="2">{{ section.title }}</Heading>
+        <Heading v-if="section.title" :level="section.level || 2">{{ section.title }}</Heading>
         <Paragraph :content="section.text">
         </Paragraph>
         <RegenerateForm />
@@ -47,6 +47,7 @@ import Heading from './components/Heading.vue'
 import Paragraph from './components/Paragraph.vue'
 import IconButton from './components/IconButton.vue'
 import RegenerateForm from './components/RegenerateForm.vue'
+import rules from '../data/rules.js'
 
 export default {
   name: 'app',
@@ -65,17 +66,17 @@ export default {
       newGameSections: [
         {
           title: false,
-          text: 'Gebe hier ein beliebiges Wort oder eine Zahlenabfolge ein. Generiere damit ein zufälliges Spiel. Das Wort wird in der URL angezeigt und der Link kann nun mit anderen Spielern geteilt werden.'
+          text: 'Gebe hier ein beliebiges Wort oder eine Zahlenabfolge ein. Damit generierst du ein zufälliges Spiel. Das Wort wird in der URL angezeigt wodurch dasselbe Spiel mit anderen Spielern geteilt werden kann.'
         },
       ],
       infoSections: [
         {
           title: false,
-          text: 'CovidNames ist eine digitale Version des Spiels «CodeNames» und entstand während der Corona-Virus-Quarantäne. Grundsätzlich sind die Regeln dieselben, jedoch werden einige Dinge verbessert, die mich schon immer an CodeNames gestört haben. Beispielsweise, dass die Kärtchen nicht dasselbe Seitenverhältnis haben, wie die Markierungen auf der Lösungskarte der Spielleiter.'
+          text: 'CovidNames ist eine digitale Version des Spiels «CodeNames» und entstand während der Corona-Virus-Quarantäne. Grundsätzlich sind die Regeln dieselben (siehe unten), jedoch habe ich einige Dinge verbessert, die mich schon immer an CodeNames gestört haben. Beispielsweise, dass die Kärtchen nicht dasselbe Seitenverhältnis haben wie die Markierungen auf der Lösungskarte der Spielleiter. Ebenfalls ist die digitale Ansicht für den Spielleiter höchstwahrscheinlich einfacher zu überblicken, da die Begriffe, die zu seinem Team gehören direkt eingefärbt sind.'
         },
         {
-          title: 'Spielregeln',
-          text: 'Spielregeln'
+          title: false,
+          text: 'Am besten setzt man einen Zoom/Skype/Whatsapp/Facetime-Call auf, damit die verschiedenen Spieler sich leicht austauschen können. Als Gruppe einigt man sich auf ein Spiel, und teilt sich dieses per Link. Die Spielleiter schauen darauf, dass Niemand auf ihr Gerät die Lösung erspähen kann. Grundsätzlich funktioniert diese digitale Version aber natürlich nur durch Fairness!'
         },
         {
           title: 'Wie läuft das jetzt digital ab?',
@@ -86,6 +87,33 @@ export default {
               <li>Die Spielemacher öffnen beide ihre Ansicht und das Spiel startet wie gewohnt.</li>
               <li>Für das Aufdecken von Kärtchen klickt man auf das Häkchen.</li>
             </ol>
+          `
+        },
+        {
+          title: false,
+          text: `
+            <hr>
+          `
+        },
+        {
+          title: 'Spielregeln',
+          text: `
+            Hier folgen die offiziellen Spielregeln von CodeNames...
+          `
+        },
+        ...rules,
+        {
+          title: false,
+          text: `
+            <hr>
+          `
+        },
+        {
+          title: 'Info',
+          text: `
+            Dieses Web-App dient dem alleinigen Zweck das Spiel «CodeNames» auch während Corona-Zeiten zu spielen. Für Inputs, Kommentare oder Sonstiges, darf man mich gerne kontaktieren:<br><br>
+            <a href"mailto:covidnames@jonasscheiwiller.ch">covidnames@jonasscheiwiller.ch</a><br><br>
+            Viel Spass!
           `
         },
       ]

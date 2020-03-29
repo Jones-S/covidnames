@@ -23,12 +23,27 @@ export default {
   .#{$c} {
     @include font-style-base;
 
-    // ol,
-    // ul {}
+    ol,
+    ul {
+      @include reset-list;
+      margin: 1em 0;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
+    }
 
     li {
       margin-left: 1em;
       margin-bottom: 0.4em;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 </style>
