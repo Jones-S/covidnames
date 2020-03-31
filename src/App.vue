@@ -161,7 +161,7 @@ export default {
       },
       meta: [
         { charset: 'utf-8' },
-        { name: 'description', content: 'Spiele CodeNames trotz Social Distancing.' },
+        { name: 'description', content: 'Spiele CodeNames trotz Social Distancing. CovidNames ist die digital spielbare Varianten des Brettspiels CodeNames mit verbesserter Spielleiter-Ansicht und unendlichen Spiel-Möglichkeiten.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { property: 'og:image', content: ogImageUrl },
         { name: 'og:image:width', content: 1080 },
