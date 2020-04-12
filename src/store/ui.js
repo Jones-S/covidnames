@@ -44,6 +44,9 @@ const actions = {
   toggleSpyMaster({ commit }) {
     commit('TOGGLE_SPYMASTER')
   },
+  closeSpyMaster({ commit }) {
+    commit('CLOSE_SPYMASTER')
+  },
   toggleInfo({ commit }) {
     commit('TOGGLE_INFO')
   },
@@ -105,8 +108,11 @@ const actions = {
 
 // mutations
 const mutations = {
-  TOGGLE_SPYMASTER(state) {
+  CLOSE_SPYMASTER(state) {
     state.spymasterView = !state.spymasterView
+  },
+  TOGGLE_SPYMASTER(state) {
+    state.spymasterView = false
   },
   TOGGLE_INFO(state) {
     state.infoOpen = !state.infoOpen

@@ -27,12 +27,13 @@ export default {
     this.checkRoute()
   },
   methods: {
-    ...mapActions('ui', ['changeSeed', 'closeGameDialog']),
+    ...mapActions('ui', ['changeSeed', 'closeGameDialog', 'closeSpyMaster']),
     regenerate() {
       this.activeSeed = this.input
       this.changeSeed(this.input)
       this.setRoute(this.input)
       this.closeGameDialog()
+      this.closeSpyMaster()
     },
     checkRoute() {
       let query =
