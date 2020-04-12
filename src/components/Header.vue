@@ -1,12 +1,12 @@
 <template>
   <div class="Header">
     <Logo />
-    <ToggleButton :text="'Spielleiter-Ansicht'" @toggle="switchView" />
+    <ToggleButton ref="toggle" :text="'Spielleiter-Ansicht'" @toggle="switchView" />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 import Logo from './Logo.vue'
 import ToggleButton from './ToggleButton.vue'
@@ -16,6 +16,16 @@ export default {
   components: {
     ToggleButton,
     Logo
+  },
+  watch: {
+    spymasterView: function(newValue) {
+      if (!newValue) {
+        this.$refs.toggle.deactivate()
+      }
+    }
+  },
+  computed: {
+    ...mapState('ui', ['spymasterView'])
   },
   methods: {
     ...mapActions('ui', ['toggleSpyMaster']),

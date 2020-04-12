@@ -109,10 +109,10 @@ const actions = {
 // mutations
 const mutations = {
   CLOSE_SPYMASTER(state) {
-    state.spymasterView = !state.spymasterView
+    state.spymasterView = false
   },
   TOGGLE_SPYMASTER(state) {
-    state.spymasterView = false
+    state.spymasterView = !state.spymasterView
   },
   TOGGLE_INFO(state) {
     state.infoOpen = !state.infoOpen

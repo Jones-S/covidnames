@@ -26,6 +26,9 @@ export default {
     toggle() {
       this.on = !this.on
       this.$emit('toggle')
+    },
+    deactivate() {
+      this.on = false
     }
   }
 }
